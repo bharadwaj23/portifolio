@@ -64,6 +64,17 @@
 								</div>
 							</article>
 
+						<pre><code>i = 0;
+
+									while (!deck.isInOrder()) {
+										print 'Iteration ' + i;
+										deck.shuffle();
+										i++;
+									}
+
+									print 'It took ' + i + ' iterations to sort the deck.';
+						</code></pre>
+	
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy;Bharadwaj</p>
@@ -74,7 +85,7 @@
 		<!-- BG -->
 			<div id="bg"></div>
 
-		<!----> Scripts -->
+		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
@@ -102,7 +113,8 @@
 		h1 {
 			font-size: 3em;
 			animation: slide-in 1s ease-out, color-change 2s alternate infinite;
-		}	
+		}
 			</style>
+
 	</body>
 </html>
