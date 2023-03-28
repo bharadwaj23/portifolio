@@ -46,7 +46,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<div style = "text-align:center;">
-								<h1>Bharadwaj Bingi</h1>
+								<h1 class = "brand">Bharadwaj Bingi</h1>
 								</div>
 								<p>"Hey there, I'm Bharadwaj Bingi, a curious mind with a passion for creating innovative solutions through full-stack development. Currently pursuing a Bachelor of Technology degree in Electronics and Communication at Sreyas Institute of Engineering and Technology in Hyderabad, 
 									I am constantly exploring the latest technologies and honing my skills to build cutting-edge web applications.
@@ -102,28 +102,48 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<style>
-						@keyframes slide-in {
-			from {
+					.brand {
+				font-size: 4em;
+				display: inline-block;
 				transform: translateY(-100%);
+				animation: slide-in 1s cubic-bezier(0.3, 0.45, 0.5, 1) forwards,
+							wobble 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
+				letter-spacing: 0.2em;
+				background-image: linear-gradient(to right, #f7b733, #fc4a1a);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				filter: drop-shadow(0 0 0.5rem #f7b733);
 			}
-			to {
+
+			@keyframes slide-in {
+				from {
+					transform: translateY(-100%);
+				}
+				to {
 				transform: translateY(0%);
 			}
 		}
 
-		@keyframes color-change {
-			from {
-				color: #ff0000;
+		@keyframes wobble {
+			0% {
+				transform: rotate(0deg) scale(1);
 			}
-			to {
-				color: #00ff00;
+			20% {
+				transform: rotate(-5deg) scale(1.1);
 			}
-		}
-
-		h1 {
-			font-size: 3em;
-			animation: slide-in 1s ease-out, color-change 2s alternate infinite;
-		}
+			40% {
+				transform: rotate(3deg) scale(0.9);
+			}
+			60% {
+				transform: rotate(-2deg) scale(1.05);
+			}
+			80% {
+				transform: rotate(1deg) scale(0.95);
+			}
+			100% {
+				transform: rotate(0deg) scale(1);
+			}
+		}	
 			</style>
 	</body>
 </html>
