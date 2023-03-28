@@ -46,7 +46,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<div style = "text-align:center;">
-								<h1>Code Visionary</h1>
+								<h1 class = "heading">Code Visionary</h1>
 								</div>
 								<p>"Hey there, I'm Bharadwaj Bingi, a curious mind with a passion for creating innovative solutions through full-stack development. Currently pursuing a Bachelor of Technology degree in Electronics and Communication at Sreyas Institute of Engineering and Technology in Hyderabad, 
 									I am constantly exploring the latest technologies and honing my skills to build cutting-edge web applications.
@@ -102,7 +102,64 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<style>
+				h1.heading {
+  position: relative;
+  font-size: 4rem;
+  color: white;
+  animation: glitch 1s linear infinite;
+}
 
+h1.heading::before {
+  content: attr(data-text);
+  position: absolute;
+  left: -2px;
+  text-shadow: -1px 0 red;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 1s linear infinite;
+}
+
+h1.heading::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 2px;
+  text-shadow: 1px 0 blue;
+  background: black;
+  overflow: hidden;
+  clip: rect(0, 900px, 0, 0);
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(34px, 9999px, 58px, 0);
+    transform: skew(0.56deg);
+  }
+  20% {
+    clip: rect(33px, 9999px, 6px, 0);
+    transform: skew(0.2deg);
+  }
+  40% {
+    clip: rect(7px, 9999px, 74px, 0);
+    transform: skew(0.76deg);
+  }
+  60% {
+    clip: rect(59px, 9999px, 49px, 0);
+    transform: skew(0.67deg);
+  }
+  80% {
+    clip: rect(40px, 9999px, 23px, 0);
+    transform: skew(0.86deg);
+  }
+  100% {
+    clip: rect(4px, 9999px, 90px, 0);
+    transform: skew(0.3deg);
+  }
+}
+
+			</style>
 
 	</body>
 </html>
