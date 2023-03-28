@@ -46,7 +46,7 @@
 							<article id="about">
 								<h2 class="major">About</h2>
 								<div style = "text-align:center;">
-								<h1 class = "brand">Bharadwaj Bingi</h1>
+								<h1 class = "brand">Bharadwaj</h1>
 								</div>
 								<p>"Hey there, I'm Bharadwaj Bingi, a curious mind with a passion for creating innovative solutions through full-stack development. Currently pursuing a Bachelor of Technology degree in Electronics and Communication at Sreyas Institute of Engineering and Technology in Hyderabad, 
 									I am constantly exploring the latest technologies and honing my skills to build cutting-edge web applications.
@@ -101,49 +101,58 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
 			<style>
-					.brand {
-				font-size: 4em;
-				display: inline-block;
-				transform: translateY(-100%);
-				animation: slide-in 1s cubic-bezier(0.3, 0.45, 0.5, 1) forwards,
-							wobble 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite;
-				letter-spacing: 0.2em;
-				background-image: linear-gradient(to right, #f7b733, #fc4a1a);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				filter: drop-shadow(0 0 0.5rem #f7b733);
-			}
-
-			@keyframes slide-in {
-				from {
-					transform: translateY(-100%);
+				.heading {
+					font-size: 8em;
+					font-family: 'Kaushan Script', cursive;
+					color: #1c1c1c;
+					position: relative;
 				}
-				to {
-				transform: translateY(0%);
-			}
-		}
-
-		@keyframes wobble {
-			0% {
-				transform: rotate(0deg) scale(1);
-			}
-			20% {
-				transform: rotate(-5deg) scale(1.1);
-			}
-			40% {
-				transform: rotate(3deg) scale(0.9);
-			}
-			60% {
-				transform: rotate(-2deg) scale(1.05);
-			}
-			80% {
-				transform: rotate(1deg) scale(0.95);
-			}
-			100% {
-				transform: rotate(0deg) scale(1);
-			}
-		}	
+		
+				.heading::before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(to right, #00d2ff, #3a7bd5, #a8c0ff);
+					opacity: 0;
+					transition: opacity 0.5s ease;
+					z-index: -1;
+				}
+		
+				.heading:hover::before {
+					opacity: 0.8;
+				}
 			</style>
+			<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+
+			<script>
+				var textWrapper = document.querySelector('.heading');
+				textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+		
+				anime.timeline({loop: true})
+				  .add({
+					targets: '.heading .letter',
+					translateY: [-100,0],
+					easing: "easeOutExpo",
+					duration: 1400,
+					delay: (el, i) => 30 * i
+				  }).add({
+					targets: '.heading',
+					opacity: 0,
+					duration: 1000,
+					easing: "easeOutExpo",
+					delay: 1000
+				  }).add({
+					targets: '.heading',
+					opacity: 1,
+					duration: 1000,
+					easing: "easeOutExpo",
+					delay: 1000
+				  });
+			</script>
 	</body>
 </html>
