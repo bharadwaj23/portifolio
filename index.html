@@ -104,42 +104,60 @@
 
 			<style>
 				h1.heading {
-				font-size: 6rem;
-				color: white;
-				background: linear-gradient(to right, #00b4db, #0083b0);
-				background-clip: text;
-				-webkit-background-clip: text;
-				text-fill-color: transparent;
-				animation: glitch 2s infinite;
+				position: relative;
+				font-size: 3rem;
+				color: rgb(214, 214, 214);
+				animation: glitch 1s linear infinite;
+				}
+
+				h1.heading::before {
+				content: attr(data-text);
+				position: absolute;
+				left: -2px;
+				text-shadow: -1px 0 red;
+				background: black;
+				overflow: hidden;
+				clip: rect(0, 900px, 0, 0);
+				animation: glitch 1s linear infinite;
+				}
+
+				h1.heading::after {
+				content: attr(data-text);
+				position: absolute;
+				left: 2px;
+				text-shadow: 1px 0 blue;
+				background: black;
+				overflow: hidden;
+				clip: rect(0, 900px, 0, 0);
+				animation: glitch 1s linear infinite;
 				}
 
 				@keyframes glitch {
 				0% {
-					transform: translate(0);
-					opacity: 1;
+					clip: rect(34px, 9999px, 58px, 0);
+					transform: skew(0.56deg);
 				}
 				20% {
-					transform: translate(-10px, 10px);
-					opacity: 0.8;
+					clip: rect(33px, 9999px, 6px, 0);
+					transform: skew(0.2deg);
 				}
 				40% {
-					transform: translate(5px, -5px);
-					opacity: 0.6;
+					clip: rect(7px, 9999px, 74px, 0);
+					transform: skew(0.76deg);
 				}
 				60% {
-					transform: translate(-10px, 10px);
-					opacity: 0.8;
+					clip: rect(59px, 9999px, 49px, 0);
+					transform: skew(0.67deg);
 				}
 				80% {
-					transform: translate(15px, 5px);
-					opacity: 0.4;
+					clip: rect(40px, 9999px, 23px, 0);
+					transform: skew(0.86deg);
 				}
 				100% {
-					transform: translate(-10px, 10px);
-					opacity: 0.8;
+					clip: rect(4px, 9999px, 90px, 0);
+					transform: skew(0.3deg);
 				}
 				}
-
 
 			</style>
 
